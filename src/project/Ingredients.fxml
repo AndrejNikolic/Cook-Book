@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="742.0" prefWidth="880.0" styleClass="ingredients" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.IngredientsController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <children>
+      <BorderPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <top>
+            <FlowPane alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="imageMeal" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@default-placeholder-500x500.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" prefHeight="170.0" prefWidth="416.0" styleClass="ing-grid">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="266.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="120.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="inputImeObroka" alignment="CENTER_RIGHT" prefHeight="37.0" prefWidth="285.0">
+         
+      </TextField>
+                        <Label text="Meal Price" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label fx:id="printCenaObroka" style="-fx-font-weight: 700;" text="cena ovde" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Selling Price" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <TextField fx:id="inputProdajna" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="inputImageMeal" promptText="image URL" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loadNewImageMeal" text="Load Image" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Label text="Meal Name" GridPane.columnIndex="1">
+         
+      </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </FlowPane>
+         </top>
+         <bottom>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#saveObrok" styleClass="saveMeal-button" text="SAVE MEAL CHANGES" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+         <center>
+            <BorderPane BorderPane.alignment="CENTER">
+               <center>
+                  <VBox alignment="CENTER" fillWidth="false" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TableView fx:id="dbNormativi">
+                           <columns>
+                              <TableColumn fx:id="col_ime" prefWidth="259.0" text="Name" />
+                              <TableColumn fx:id="col_kolicina" minWidth="0.0" prefWidth="79.0" text="Quantity" />
+                              <TableColumn fx:id="col_jed_mere" minWidth="0.0" prefWidth="52.0" text="Unit" />
+                              <TableColumn fx:id="col_cena" minWidth="0.0" prefWidth="74.0" text="Price" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </center>
+               <bottom>
+                  <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" styleClass="ing-tableBtn" vgap="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#addNewNorm" text="ADD NEW INGREDIENT" />
+                        <Button mnemonicParsing="false" onAction="#deleteNorm" text="DELETE SELECTED INGREDIENT" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </FlowPane>
+               </bottom>
+               <top>
+                  <VBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label styleClass="home-title" text="Ingredients">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#loadData" text="Refresh table" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="60.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </top>
+            </BorderPane>
+         </center>
+         <left>
+            <VBox alignment="CENTER" fillWidth="false" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="paneImage" prefHeight="150.0" prefWidth="150.0">
+                     <children>
+                        <ImageView fx:id="ingImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@default-placeholder-500x500.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <TitledPane fx:id="titledIzmena" expanded="false" text="Change ingredient">
+                    <content>
+                      <AnchorPane>
+                           <children>
+                              <GridPane alignment="CENTER" hgap="5.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="10.0" prefWidth="59.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="75.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.99999237060547" minWidth="10.0" prefWidth="66.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="inputIme" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Name" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="inputKolicina" prefHeight="25.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="labelJedMere" text="g" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="34.0" text="Qty" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#saveChanges" text="SAVE CHANGES" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <font>
+                        <Font name="Montserrat Regular" size="14.0" />
+                     </font>
+                  </TitledPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

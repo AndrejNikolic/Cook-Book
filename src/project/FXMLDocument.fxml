@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="828.0" styleClass="home" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.FXMLDocumentController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <children>
+      <BorderPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <bottom>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" prefHeight="60.0" styleClass="home-bottom" vgap="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#dodajObrok" text="ADD MEAL" />
+                    <Button fx:id="button" onAction="#izmeniObrok" text="EDIT MEAL / ADD INGREDIENTS" />
+                  <Button mnemonicParsing="false" onAction="#deleteObrok" text="DELETE MEAL" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </FlowPane>
+         </bottom>
+         <center>
+            <FlowPane alignment="CENTER" hgap="20.0" vgap="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="TOP_CENTER" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="imageObrok" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@default-placeholder-500x500.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="labelSastojci" alignment="CENTER" maxWidth="1.7976931348623157E308" styleClass="home-label" text="Ingredients" wrapText="true">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <TableView fx:id="dbObroci" prefHeight="262.0" prefWidth="359.0">
+                          <columns>
+                            <TableColumn fx:id="col_obrok_ime" prefWidth="171.0" styleClass="table_content" text="Ime" />
+                              <TableColumn fx:id="col_obrok_cena" prefWidth="76.0" styleClass="table_content" text="Cena" />
+                              <TableColumn fx:id="col_obrok_prod_cena" minWidth="0.0" prefWidth="110.0" styleClass="table_content" text="Prodajna cena" />
+                          </columns>
+                        </TableView>
+                        <Button mnemonicParsing="false" onAction="#loadObrokData" text="Refresh table" />
+                     </children>
+                  </VBox>
+               </children>
+            </FlowPane>
+         </center>
+         <top>
+            <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" styleClass="home-title" text="WELCOME TO YOUR RESTAURNTS COOK BOOK" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" style="-fx-font-size: 18px;" styleClass="home-title" text="Please select or add your meal" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+    </children>
+</AnchorPane>

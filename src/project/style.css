@@ -1,0 +1,120 @@
+/*
+ * Empty Stylesheet file.
+ */
+.root { 
+    -fx-focus-color: #a70632;
+    -fx-accent: #a70632;
+    -fx-font: 14px SF-UI-Display, sans-serif;
+}
+
+.new_norm-image {
+}
+
+.input_field {
+   -fx-font: 14px SF-UI-Display, sans-serif;
+}
+
+.label {
+    -fx-font: 14px Montserrat, sans-serif;
+}
+
+.button {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,rgba(139,5,42,1) 0%,rgba(167,5,50,1) 100%);
+    -fx-font: 14px Montserrat, sans-serif;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,rgba(139,5,42,0.8) 0%,rgba(167,5,50,0.8) 100%);
+}
+
+/*-----New Normativ-----*/
+
+.gridPane_newN-button {
+   
+}
+
+.newNorm {
+    -fx-background-image: url("../img/newNorm-background.jpg");
+    -fx-background-size: cover;
+}
+
+.newNorm-border {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 10px;
+}
+
+.newNorm-border .label {
+    -fx-text-fill: white;
+}
+
+.newNorm-border .input_field:disabled {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-opacity: 1;
+    -fx-text-fill: white;
+}
+
+
+/*-----HOME-----*/
+
+.home {
+    -fx-background-image: url("../img/home-background.jpg");
+    -fx-background-size: cover;
+}
+
+.home-label {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-text-fill: white;
+}
+
+.home-title {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-text-fill: white;
+    -fx-font: 24px Montserrat, sans-serif;
+}
+
+.home-bottom .button {
+    -fx-padding: 10px 40px 10px 40px;
+}
+
+/*-----INGREDIENTS-----*/
+
+.ingredients {
+    -fx-background-image: url("../img/ingredients-background.jpg");
+    -fx-background-size: cover;
+}
+.ing-grid {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font: 16px Montserrat, sans-serif;
+}
+.ing-grid .label,  .ing-grid .button{
+    -fx-text-fill: white;
+    -fx-font: 16px Montserrat, sans-serif;
+}
+
+.ing-tableBtn .button {
+    -fx-padding: 10px 20px 10px 20px;
+}
+
+.saveMeal-button {
+    -fx-padding: 10px 100px 10px 100px;
+    -fx-font: 20px Montserrat, sans-serif;
+    -fx-font-weight: 700;
+}
+
+/*-----MEAL-----*/
+
+.addMeal {
+    -fx-background-image: url("../img/newMeal-background.jpg");
+    -fx-background-size: cover;
+}
+
+.newMeal-border_pane {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 10px;
+}
