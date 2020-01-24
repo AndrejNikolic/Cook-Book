@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefWidth="810.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.NewNormativController">
     <stylesheets>
-        <URL value="@style.css" />
+        <URL value="@../style/style.css" />
     </stylesheets>
    <children>
       <BorderPane layoutX="8.0" layoutY="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="350.0" prefHeight="510.0" prefWidth="440.0" styleClass="newNorm-border" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="20.0">

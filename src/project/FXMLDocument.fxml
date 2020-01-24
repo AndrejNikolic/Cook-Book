@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="828.0" styleClass="home" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.FXMLDocumentController">
     <stylesheets>
-        <URL value="@style.css" />
+        <URL value="@../style/style.css" />
     </stylesheets>
     <children>
       <BorderPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
