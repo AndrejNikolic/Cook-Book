@@ -30,7 +30,7 @@
          <center>
             <FlowPane alignment="CENTER" hgap="20.0" vgap="20.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox alignment="TOP_CENTER" spacing="10.0">
+                  <VBox alignment="TOP_CENTER" minWidth="300.0" spacing="10.0">
                      <children>
                         <ImageView fx:id="imageObrok" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
